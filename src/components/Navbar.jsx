@@ -108,36 +108,22 @@ export default function Navbar() {
                 <div className="flex flex-col md:flex-row items-center space-y-4 md:justify-evenly">
                   {/* CSEC and Hack Logo */}
                   <div className="flex items-center space-x-3 mb-2 md:mb-0 md:w-full">
-                    <AnimatePresence mode="wait">
-                      {!showHackAd ? (
-                        <motion.div
-                          key="logos"
-                          className="flex items-center"
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                        >
-                          {/* CSEC Logo - Link to external site */}
-                          <motion.a
-                            href="/"
-                            className="relative w-[48px] h-[48px] mr-3"
-                            whileHover={{ rotate: 360 }}
-                            transition={{ duration: 2, ease: "easeInOut" }}
-                          >
-                            <Image
-                              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/csec-RitzmBrgdmOMfzaijUqHFSmOVA4LzO.png"
-                              alt="CSEC Logo"
-                              fill
-                              className="object-contain"
-                              style={{
-                                filter:
-                                  "drop-shadow(0 0 5px rgba(255, 255, 255, 0.5))",
-                              }}
-                            />
-                          </motion.a>
-                        </motion.div>
-                      ) : null}
-                    </AnimatePresence>
+                    {/* CSEC Logo - Link to external site */}
+                    <a
+                      href="/"
+                      className="relative w-[48px] h-[48px] mr-3"
+                    >
+                      <Image
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/csec-RitzmBrgdmOMfzaijUqHFSmOVA4LzO.png"
+                        alt="CSEC Logo"
+                        fill
+                        className="object-contain"
+                        style={{
+                          filter:
+                            "drop-shadow(0 0 5px rgba(255, 255, 255, 0.5))",
+                        }}
+                      />
+                    </a>
                   </div>
                   {/* Nav Links*/}
                   <div className="container items-center ">
@@ -187,57 +173,43 @@ export default function Navbar() {
               </div>
             </div>
           </motion.div>
-          <AnimatePresence mode="wait">
-            {!showHackAd ? (
-              <motion.div
-                key="logos"
-                className="flex items-center md:hidden"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
-                {/* CSEC Logo - Link to external site */}
-                <motion.a
-                  href="/"
-                  className="relative w-[48px] h-[48px] mr-3"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 2, ease: "easeInOut" }}
-                >
-                  <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/csec-RitzmBrgdmOMfzaijUqHFSmOVA4LzO.png"
-                    alt="CSEC Logo"
-                    fill
-                    className="object-contain"
-                    style={{
-                      filter: "drop-shadow(0 0 5px rgba(255, 255, 255, 0.5))",
-                    }}
-                  />
-                </motion.a>
+          <div className="flex items-center md:hidden">
+            {/* CSEC Logo - Link to external site */}
+            <a
+              href="/"
+              className="relative w-[48px] h-[48px] mr-3"
+            >
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/csec-RitzmBrgdmOMfzaijUqHFSmOVA4LzO.png"
+                alt="CSEC Logo"
+                fill
+                className="object-contain"
+                style={{
+                  filter: "drop-shadow(0 0 5px rgba(255, 255, 255, 0.5))",
+                }}
+              />
+            </a>
 
-                {/* Separator */}
-                <div className="h-7 w-px bg-gray-500 mx-3"></div>
+            {/* Separator */}
+            <div className="h-7 w-px bg-gray-500 mx-3"></div>
 
-                {/* HACK Logo - Link to home section */}
-                <motion.a
-                  href="https://hack.nith.ac.in/"
-                  target="_blank"
-                  className="relative w-[48px] h-[48px] mr-3"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29_20250208_222328_0000-50pdDbAwyrTeA1mMlMT3c72vROO2oA.png"
-                    alt="HACK Logo"
-                    fill
-                    className="object-contain"
-                    style={{
-                      filter: "drop-shadow(0 0 5px rgba(117, 2, 15, 0.5))",
-                    }}
-                  />
-                </motion.a>
-              </motion.div>
-            ) : null}
-          </AnimatePresence>
+            {/* HACK Logo - Link to home section */}
+            <a
+              href="https://hack.nith.ac.in/"
+              target="_blank"
+              className="relative w-[48px] h-[48px] mr-3"
+            >
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29_20250208_222328_0000-50pdDbAwyrTeA1mMlMT3c72vROO2oA.png"
+                alt="HACK Logo"
+                fill
+                className="object-contain"
+                style={{
+                  filter: "drop-shadow(0 0 5px rgba(117, 2, 15, 0.5))",
+                }}
+              />
+            </a>
+          </div>
           <div className="md:hidden">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
